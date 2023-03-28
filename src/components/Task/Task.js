@@ -4,6 +4,8 @@ import {useState} from "react";
 export const Task = function ({task, onDelete, onEdit}) {
     const [isEditing, setIsEditing] = useState(false);
     const [userInput, setUserInput] = useState(task.task);
+    const [completed, setCompleted] = useState(false);
+
     const handleDeleteClick = () => {
         onDelete(task.id);
     }
@@ -27,6 +29,10 @@ export const Task = function ({task, onDelete, onEdit}) {
         setIsEditing(false);
     };
 
+    const handleCheckBoxChange = (e) => {
+        setCompleted(e.target.checked);
+    }
+
     if (isEditing) {
         return (
             <form onSubmit={handleSubmit} className="ToDoForm">
@@ -39,9 +45,9 @@ export const Task = function ({task, onDelete, onEdit}) {
         );
     } else {
         return (
-            <div className="DisplayTask">
+            <div className={completed ? "DisplayTask Completed" : "DisplayTask"}>
                 <div className="DivTask">
-                    <input type="checkbox" />
+                    <input type="checkbox" onChange={handleCheckBoxChange} checked={completed}/>
                     <p>{task.task}</p>
                 </div>
                 <div className="EditTask">
