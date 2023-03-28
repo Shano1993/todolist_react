@@ -25,3 +25,10 @@
     color: rgba(70, 130, 180, 0.66);
 }
 
+.Input {
+    padding: 1rem 10rem;
+    font-size: 1.8rem;
+    color: steelblue;
+    font-style: italic;
+}
+

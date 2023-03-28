@@ -3,7 +3,7 @@
     justify-content: center;
 }
 
-.ToDoForm > input[type=text] {
+.ToDoForm > .Input {
     padding: 1rem 10rem;
     font-size: 1.8rem;
     color: steelblue;

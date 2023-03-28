@@ -11,12 +11,25 @@ function App() {
         copy = [...copy, {id: toDoList.length + 1, task: userInput, complete: false}];
         setToDoList(copy);
     }
+
+    const handleDeleteTask = (taskId) => {
+        setToDoList((prevList) => prevList.filter((task) => task.id !== taskId))
+    }
+
+    const editTask = (taskId, userInput) => {
+        setToDoList((prevList) =>
+            prevList.map((task) =>
+                task.id === taskId ? { ...task, task: userInput } : task
+            )
+        );
+    };
+
     return (
         <div className="App">
             <Header />
             <ToDoForm addTask={addTask}/>
             <div className="Task">
-                <ToDoList toDoList={toDoList}/>
+                <ToDoList toDoList={toDoList} onDeleteTask={handleDeleteTask} onEditTask={editTask}/>
             </div>
         </div>
     );
