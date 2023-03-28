@@ -1,0 +1,20 @@
+.ToDoForm {
+    display: flex;
+    justify-content: center;
+}
+
+.ToDoForm > input[type=text] {
+    padding: 1rem 10rem;
+    font-size: 1.8rem;
+    color: steelblue;
+    font-style: italic;
+}
+
+.ToDoForm > button {
+    margin-left: 0.2rem;
+    padding: 1rem 1.5rem;
+    background-color: steelblue;
+    color: white;
+    font-size: 1.8rem;
+    border: none;
+}
